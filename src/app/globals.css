@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "iftar";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #fffaf0;
+  --color-base-200: #fbf0d9;
+  --color-base-300: #f1dfb8;
+  --color-base-content: #2a2118;
+  --color-primary: #0f5c4d;
+  --color-primary-content: #fffaf0;
+  --color-secondary: #d9921a;
+  --color-secondary-content: #2a2118;
+  --color-accent: #c2410c;
+  --color-accent-content: #fffaf0;
+  --color-neutral: #1d2b27;
+  --color-neutral-content: #fffaf0;
+  --color-info: #0e7490;
+  --color-info-content: #ffffff;
+  --color-success: #15803d;
+  --color-success-content: #ffffff;
+  --color-warning: #d97706;
+  --color-warning-content: #2a2118;
+  --color-error: #b91c1c;
+  --color-error-content: #ffffff;
+  --radius-box: 1rem;
+  --radius-field: 0.6rem;
+  --radius-selector: 0.6rem;
+}
+
+@plugin "daisyui/theme" {
+  name: "iftar-dark";
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #0f1f1b;
+  --color-base-200: #0b1714;
+  --color-base-300: #07110f;
+  --color-base-content: #f3ece0;
+  --color-primary: #2bb58a;
+  --color-primary-content: #06231b;
+  --color-secondary: #f0b13a;
+  --color-secondary-content: #231a08;
+  --color-accent: #fb923c;
+  --color-accent-content: #231208;
+  --color-neutral: #1b2e29;
+  --color-neutral-content: #f3ece0;
+  --color-info: #22b8cf;
+  --color-info-content: #04222a;
+  --color-success: #4ade80;
+  --color-success-content: #052e16;
+  --color-warning: #fbbf24;
+  --color-warning-content: #2a1d03;
+  --color-error: #f87171;
+  --color-error-content: #2d0707;
+  --radius-box: 1rem;
+  --radius-field: 0.6rem;
+  --radius-selector: 0.6rem;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
