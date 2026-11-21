@@ -9,6 +9,7 @@ import FormField from "@/components/FormField";
 function LoginForm() {
   const router = useRouter();
   const redirect = useSearchParams().get("redirect") || "/";
+  const googleLoginEnabled = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_ENABLED === "true";
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState(false);
 
@@ -57,11 +58,15 @@ function LoginForm() {
               {busy && <span className="loading loading-spinner loading-sm" />} Login
             </button>
           </form>
-          <div className="divider my-0">or</div>
-          <button onClick={handleGoogle} className="btn btn-outline w-full">
-            <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true"><path fill="#EA4335" d="M12 10.2v3.9h5.5c-.2 1.4-1.7 4.1-5.5 4.1-3.3 0-6-2.7-6-6s2.7-6 6-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.7 14.6 2.7 12 2.7 6.9 2.7 2.7 6.9 2.7 12s4.2 9.3 9.3 9.3c5.4 0 8.9-3.8 8.9-9.1 0-.6-.1-1.1-.2-1.6z" /></svg>
-            Continue with Google
-          </button>
+          {googleLoginEnabled && (
+            <>
+              <div className="divider my-0">or</div>
+              <button onClick={handleGoogle} className="btn btn-outline w-full">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true"><path fill="#EA4335" d="M12 10.2v3.9h5.5c-.2 1.4-1.7 4.1-5.5 4.1-3.3 0-6-2.7-6-6s2.7-6 6-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.7 14.6 2.7 12 2.7 6.9 2.7 2.7 6.9 2.7 12s4.2 9.3 9.3 9.3c5.4 0 8.9-3.8 8.9-9.1 0-.6-.1-1.1-.2-1.6z" /></svg>
+                Continue with Google
+              </button>
+            </>
+          )}
           <p className="text-center text-sm">
             New to IftarShare? <Link href={`/register${redirect !== "/" ? `?redirect=${encodeURIComponent(redirect)}` : ""}`} className="link link-primary font-medium">Create an account</Link>
           </p>

@@ -21,4 +21,7 @@ cp .env.example .env.local   # then fill in the values
 npm install
 npm run dev
 ```
+
+Google login is displayed only when `NEXT_PUBLIC_GOOGLE_LOGIN_ENABLED=true` and the server has matching Google OAuth credentials configured.
+
 Server repo: https://github.com/jannatejakia/iftarshare-server
