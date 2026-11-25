@@ -2,7 +2,9 @@
 
 A community platform where people organise, join and track Iftar, Sehri and food-distribution events during Ramadan.
 
-**Live site:** _add your deployed URL here_
+**Live site:** https://iftarshare-client.vercel.app
+
+**API:** https://iftarshare-server.vercel.app
 
 ## Features
 - Create, update and delete your own distribution events (future dates only)
@@ -23,5 +25,7 @@ npm run dev
 ```
 
 Google login is displayed only when `NEXT_PUBLIC_GOOGLE_LOGIN_ENABLED=true` and the server has matching Google OAuth credentials configured.
+
+For production Google OAuth, use `https://iftarshare-client.vercel.app` as the authorized origin and `https://iftarshare-client.vercel.app/api/auth/callback/google` as the authorized redirect URI.
 
 Server repo: https://github.com/jannatejakia/iftarshare-server
