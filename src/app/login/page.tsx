@@ -5,10 +5,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { authClient } from "@/lib/auth-client";
 import FormField from "@/components/FormField";
+import { safeRedirect } from "@/lib/safe-redirect";
 
 function LoginForm() {
   const router = useRouter();
-  const redirect = useSearchParams().get("redirect") || "/";
+  const redirect = safeRedirect(useSearchParams().get("redirect"));
   const googleLoginEnabled = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_ENABLED === "true";
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState(false);

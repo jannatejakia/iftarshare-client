@@ -5,10 +5,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { authClient } from "@/lib/auth-client";
 import FormField from "@/components/FormField";
+import { safeRedirect } from "@/lib/safe-redirect";
 
 function RegisterForm() {
   const router = useRouter();
-  const redirect = useSearchParams().get("redirect") || "/";
+  const redirect = safeRedirect(useSearchParams().get("redirect"));
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState(false);
 
