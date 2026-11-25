@@ -13,7 +13,7 @@ A community platform where people organise, join and track Iftar, Sehri and food
 - Joined Events page sorted by date
 - Email/password and Google login with BetterAuth, JWT-protected API
 - Light and dark theme toggle
-- Static community event gallery with photo attribution
+- Static community event gallery
 
 ## Tech stack
 Next.js (App Router), TypeScript, Tailwind CSS, DaisyUI, BetterAuth, Express, MongoDB
@@ -33,13 +33,8 @@ Server repo: https://github.com/jannatejakia/iftarshare-server
 
 The newsletter form validates email and shows a frontend submit confirmation. It does not store addresses or send email.
 
-## Community photographs
+## Images
 
-Photographs are documentary images of independent initiatives, not events hosted by IftarShare. The originals are stored in `public/images`; layouts crop them for display. Author, source and license links appear beside each image.
+Local images use CC0 or public-domain releases that do not require attribution. They illustrate independent community activities, not events hosted by IftarShare.
 
-- `chawkbazar-iftar.jpg`: [Iftar at Chawkbajar Shahi Mosque 12](https://commons.wikimedia.org/wiki/File:Iftar_at_Chawkbajar_Shahi_Mosque_12.jpg), Wasiul Bahar, CC BY-SA 4.0.
-- `community-iftar.jpg`: [Iftar at Chawkbajar Shahi Mosque 25](https://commons.wikimedia.org/wiki/File:Iftar_at_Chawkbajar_Shahi_Mosque_25.jpg), Wasiul Bahar, CC BY-SA 4.0.
-- `iftar-preparation.jpg`: [Iftar at Chawkbajar Shahi Mosque 29](https://commons.wikimedia.org/wiki/File:Iftar_at_Chawkbajar_Shahi_Mosque_29.jpg), Wasiul Bahar, CC BY-SA 4.0.
-- `food-distribution.jpg`: [Al Manahil food distribution, 28 October 2020](https://commons.wikimedia.org/wiki/File:Al_Manahil_food_distribution_28_October_2020.jpg), Al Manahil Welfare Foundation Bangladesh (uploaded by Owais Al Qarni), CC BY 3.0.
-
-Licenses: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
+Source records: [iftar image (CC0)](https://commons.wikimedia.org/wiki/File:বাংলাদেশের_মসজিদে_আয়োজিত_ইফতার.jpg), [water supplies (public domain)](https://commons.wikimedia.org/wiki/File:Aid_arrives_for_victims_of_Tropical_Cyclone_Sidr_DVIDS66410.jpg), [community relief (public domain)](https://commons.wikimedia.org/wiki/File:Tropical_Cyclone_Relief_Operation,_Bangladesh_DVIDS72094.jpg), [food supplies (public domain)](https://commons.wikimedia.org/wiki/File:US_Navy_071203-N-1831S-159_Boxes_of_relief_supplies_are_piled_near_Bangladeshi_citizens_affected_by_Tropical_Cyclone_Sidr.jpg).

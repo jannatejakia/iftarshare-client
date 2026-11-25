@@ -14,8 +14,7 @@ export default function Hero() {
           </div>
         </div>
         <figure>
-          <Image src="/images/chawkbazar-iftar.jpg" alt="Plates of fruit and iftar prepared for a shared meal at Chawkbazar Shahi Mosque, Dhaka" width={1280} height={853} priority sizes="(max-width: 1024px) 100vw, 50vw" className="aspect-[4/3] w-full rounded-lg object-cover" />
-          <figcaption className="mt-3 text-xs leading-5 opacity-65">Chawkbazar Shahi Mosque, Dhaka. Photo: <a href="https://commons.wikimedia.org/wiki/File:Iftar_at_Chawkbajar_Shahi_Mosque_12.jpg" className="underline underline-offset-2">Wasiul Bahar</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline underline-offset-2">CC BY-SA 4.0</a></figcaption>
+          <Image src="/images/iftar-gathering.jpg" alt="Food and drinks laid out for a shared iftar in Bangladesh" width={500} height={667} priority sizes="(max-width: 640px) 100vw, 500px" className="mx-auto aspect-[4/3] w-full max-w-lg rounded-lg object-cover object-bottom" />
         </figure>
       </div>
     </section>
