@@ -31,7 +31,7 @@ For production Google OAuth, use `https://iftarshare-client.vercel.app` as the a
 
 Server repo: https://github.com/jannatejakia/iftarshare-server
 
-The newsletter section is design-only, as specified in the assignment. It does not collect email addresses.
+The newsletter form validates email and shows a frontend submit confirmation. It does not store addresses or send email.
 
 ## Community photographs
 
