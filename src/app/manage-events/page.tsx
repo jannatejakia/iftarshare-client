@@ -34,7 +34,7 @@ export default function ManageEventsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12">
-      <h1 className="mb-8 text-3xl font-extrabold text-primary sm:text-4xl">Manage Events</h1>
+      <h1 className="mb-6 text-2xl font-semibold">Manage Events</h1>
       {editing ? (
         <section className="max-w-3xl">
           <h2 className="mb-4 text-xl font-semibold">Update event</h2>

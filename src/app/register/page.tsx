@@ -54,9 +54,9 @@ function RegisterForm() {
 
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-md items-center px-4 py-12">
-      <div className="card w-full border border-base-300 bg-base-100 shadow-lg">
+      <div className="card w-full border border-base-300 bg-base-100">
         <div className="card-body gap-4">
-          <h1 className="text-center text-3xl font-extrabold text-primary">Join IftarShare</h1>
+          <h1 className="text-center text-2xl font-semibold">Register</h1>
           <p className="text-center text-sm opacity-75">Create an account to host and join events.</p>
           <form onSubmit={handleSubmit} noValidate className="space-y-3">
             {field("name", "Name", { type: "text", placeholder: "Your full name" })}

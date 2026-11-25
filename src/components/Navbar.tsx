@@ -32,14 +32,14 @@ export default function Navbar() {
   );
 
   return (
-    <header className="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
+    <header className="border-b border-base-300 bg-base-100">
       <div className="navbar mx-auto max-w-7xl px-4">
         <div className="navbar-start gap-1">
           <div className="dropdown lg:hidden">
             <button tabIndex={0} className="btn btn-ghost btn-circle" aria-label="Open menu">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h8" /></svg>
             </button>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content z-50 mt-3 w-52 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content z-50 mt-3 w-52 rounded-md border border-base-300 bg-base-100 p-2">
               <li>{link("/", "Home")}</li>
               <li>{link("/events", "Upcoming Events")}</li>
             </ul>
@@ -62,7 +62,7 @@ export default function Navbar() {
             <>
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="tooltip tooltip-bottom btn btn-ghost btn-circle avatar" data-tip={user.name}>
-                  <div className="w-10 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
+                  <div className="w-10 rounded-full border border-base-300">
                     {user.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={user.image} alt={user.name} referrerPolicy="no-referrer" />
@@ -71,7 +71,7 @@ export default function Navbar() {
                     )}
                   </div>
                 </div>
-                <ul tabIndex={0} className="menu dropdown-content z-50 mt-3 w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+                <ul tabIndex={0} className="menu dropdown-content z-50 mt-3 w-56 rounded-md border border-base-300 bg-base-100 p-2">
                   <li className="menu-title truncate">{user.name}</li>
                   <li><Link href="/create-event">Create Event</Link></li>
                   <li><Link href="/manage-events">Manage Events</Link></li>

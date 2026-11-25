@@ -8,7 +8,7 @@ export default function EventsPage() {
   const { data: events, error } = useFetch<EventItem[]>("/events");
   return (
     <div className="mx-auto max-w-7xl px-4 py-12">
-      <h1 className="mb-8 text-3xl font-extrabold text-primary sm:text-4xl">Upcoming Events</h1>
+      <h1 className="mb-6 text-2xl font-semibold">Upcoming Events</h1>
       {error ? <div role="alert" className="alert alert-error">{error}</div>
         : events === null ? <p role="status">Loading events...</p>
         : events.length === 0 ? <EmptyState title="No upcoming events yet." />

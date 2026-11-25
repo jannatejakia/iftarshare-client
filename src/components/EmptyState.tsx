@@ -9,7 +9,7 @@ type Props = {
 
 export default function EmptyState({ title, text, action, className = "" }: Props) {
   return (
-    <div className={`rounded-box border border-dashed border-base-300 p-12 text-center ${className}`}>
+    <div className={`rounded-md border border-base-300 p-6 text-center ${className}`}>
       <p className="text-lg font-semibold">{title}</p>
       {text && <p className="mt-1 opacity-75">{text}</p>}
       {action && (

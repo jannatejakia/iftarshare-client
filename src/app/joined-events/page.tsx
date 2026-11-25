@@ -18,7 +18,7 @@ export default function JoinedEventsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12">
-      <h1 className="text-3xl font-extrabold text-primary sm:text-4xl">Joined Events</h1>
+      <h1 className="text-2xl font-semibold">Joined Events</h1>
       <p className="mb-8 mt-2 opacity-75">Events you have joined, sorted by event date.</p>
 
       {joined === null ? (
