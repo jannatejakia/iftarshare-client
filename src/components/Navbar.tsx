@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="navbar-end gap-1">
           <ThemeToggle />
           {isPending ? (
-            <div className="skeleton h-10 w-10 rounded-full" />
+            <span role="status" className="text-sm">Loading...</span>
           ) : user ? (
             <>
               <div className="dropdown dropdown-end">

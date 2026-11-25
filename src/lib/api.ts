@@ -12,10 +12,7 @@ export type EventItem = {
   thumbnail: string;
   location: string;
   eventDate: string;
-  capacity: number;
   creatorEmail: string;
-  creatorName?: string;
-  joinedCount?: number;
 };
 
 export type JoinedItem = { _id: string; joinedAt: string; event: EventItem };
@@ -42,4 +39,4 @@ export async function apiFetch<T>(path: string, options: RequestInit = {}, auth 
 }
 
 export const formatDate = (iso: string) =>
-  new Date(iso).toLocaleString("en-GB", { timeZone: "Asia/Dhaka", day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true });
+  new Date(iso).toLocaleString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" });

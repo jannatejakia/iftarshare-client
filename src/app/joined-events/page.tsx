@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { toast } from "sonner";
 import { JoinedItem } from "@/lib/api";
 import { useFetch } from "@/hooks/useFetch";
-import { EventGrid, EventGridSkeleton } from "@/components/EventGrid";
+import { EventGrid } from "@/components/EventGrid";
 import EmptyState from "@/components/EmptyState";
 
 export default function JoinedEventsPage() {
@@ -19,10 +19,10 @@ export default function JoinedEventsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12">
       <h1 className="text-3xl font-extrabold text-primary sm:text-4xl">Joined Events</h1>
-      <p className="mb-8 mt-2 opacity-75">Your volunteer commitments, soonest first. Check each event for the meeting point and arrival time.</p>
+      <p className="mb-8 mt-2 opacity-75">Events you have joined, sorted by event date.</p>
 
       {joined === null ? (
-        <EventGridSkeleton count={3} />
+        <p role="status">Loading events...</p>
       ) : joined.length === 0 ? (
         <EmptyState
           title="You have not joined any events yet."

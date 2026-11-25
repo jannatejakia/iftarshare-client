@@ -10,15 +10,9 @@ export const metadata: Metadata = {
     "Organise, join and track Iftar, Sehri and food-distribution events in your neighbourhood.",
 };
 
-// apply the saved theme early so the page does not flash
-const themeScript = `try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}`;
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="antialiased" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang="en" className="antialiased" data-theme="iftar">
       <body className="min-h-screen flex flex-col bg-base-100 text-base-content">
         <Navbar />
         <main className="flex-1">{children}</main>

@@ -34,7 +34,6 @@
 
 @plugin "daisyui/theme" {
   name: "iftar-dark";
-  prefersdark: true;
   color-scheme: dark;
   --color-base-100: #0f1f1b;
   --color-base-200: #0b1714;

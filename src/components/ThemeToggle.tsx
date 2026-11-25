@@ -1,20 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    const isDark = saved ? saved === "iftar-dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setDark(isDark);
-  }, []);
-
   function toggle() {
     const next = dark ? "iftar" : "iftar-dark";
     document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
     setDark(!dark);
   }
 

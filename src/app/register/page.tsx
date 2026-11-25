@@ -22,7 +22,7 @@ function RegisterForm() {
     const password = String(fd.get("password") ?? "");
 
     const found: Record<string, string> = {};
-    if (name.length < 2) found.name = "Please enter your name.";
+    if (!name) found.name = "Please enter your name.";
     if (!/^\S+@\S+\.\S+$/.test(email)) found.email = "Enter a valid email address.";
     if (photoURL && !/^https?:\/\/.+/i.test(photoURL)) found.photoURL = "Photo URL must start with http:// or https://.";
     if (password.length < 6) found.password = "Password must be at least 6 characters.";

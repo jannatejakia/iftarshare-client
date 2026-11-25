@@ -1,7 +1,7 @@
 const features = [
-  ["Find an event", "Search by area or event type."],
-  ["Volunteer", "Join an event and help the organiser."],
-  ["Organise", "Create an event and manage your volunteers."],
+  ["Find an event", "Browse upcoming community events."],
+  ["Join an event", "Take part in a community event."],
+  ["Organise", "Create and manage your own events."],
 ];
 
 export default function Features() {

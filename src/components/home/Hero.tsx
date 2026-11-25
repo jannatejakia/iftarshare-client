@@ -7,9 +7,9 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16">
         <div>
           <h1 className="max-w-xl text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">Lend a hand at your local iftar.</h1>
-          <p className="mt-5 max-w-lg text-lg leading-8 opacity-80">Find iftar and food distribution events in Bangladesh. Join as a volunteer or organise your own.</p>
+          <p className="mt-5 max-w-lg text-lg leading-8 opacity-80">Find iftar and food distribution events in Bangladesh. Join an event or organise your own.</p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link href="/events" className="btn btn-primary">See volunteer opportunities</Link>
+            <Link href="/events" className="btn btn-primary">Upcoming Events</Link>
             <Link href="/create-event" className="link text-sm font-medium underline-offset-4">Post your event</Link>
           </div>
         </div>

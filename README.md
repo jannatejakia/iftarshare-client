@@ -8,12 +8,12 @@ A community platform where people organise, join and track Iftar, Sehri and food
 
 ## Features
 - Create, update and delete your own distribution events (future dates only)
-- Browse upcoming events, filtered by type and searchable by location
-- Join an event as a volunteer, with limits set by the organiser
+- Browse upcoming events in a grid
+- Join an event while logged in
 - Joined Events page sorted by date
 - Email/password and Google login with BetterAuth, JWT-protected API
 - Light and dark theme toggle
-- Bangladesh-time event dates and local community photographs with attribution
+- Static community event gallery with photo attribution
 
 ## Tech stack
 Next.js (App Router), TypeScript, Tailwind CSS, DaisyUI, BetterAuth, Express, MongoDB

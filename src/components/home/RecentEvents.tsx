@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { API_URL, EventItem } from "@/lib/api";
-import { EventGrid, EventGridSkeleton } from "@/components/EventGrid";
+import { EventGrid } from "@/components/EventGrid";
 
 // Keep an unavailable noticeboard distinct from one with no upcoming events.
 async function getRecentEvents(): Promise<EventItem[] | null> {
@@ -35,7 +35,7 @@ export default function RecentEvents() {
           <h2 className="text-2xl font-semibold">Upcoming events</h2>
           <Link href="/events" className="link text-sm">All upcoming events</Link>
         </div>
-        <Suspense fallback={<EventGridSkeleton />}>
+        <Suspense fallback={<p role="status">Loading events...</p>}>
           <EventList />
         </Suspense>
       </div>
