@@ -94,7 +94,7 @@ export default function EventForm({
         <input name="eventDate" type="datetime-local" min={minDate} defaultValue={initial ? toLocalInput(initial.eventDate) : ""} className={`input ${cls("eventDate")}`} />
       </FormField>
       <FormField label="Location" error={errors.location}>
-        <input name="location" defaultValue={initial?.location} placeholder="Area, meeting point and district — e.g. Mirpur 10, Dhaka" className={`input ${cls("location")}`} />
+        <input name="location" defaultValue={initial?.location} placeholder="Area, meeting point and district, e.g. Mirpur 10, Dhaka" className={`input ${cls("location")}`} />
       </FormField>
       <FormField label="Thumbnail image URL" error={errors.thumbnail} className="sm:col-span-2">
         <input name="thumbnail" type="url" defaultValue={initial?.thumbnail} placeholder="https://..." className={`input ${cls("thumbnail")}`} />
