@@ -7,6 +7,7 @@
   name: "iftar";
   default: true;
   color-scheme: light;
+  --border: 1px;
   --color-base-100: #fcfbf7;
   --color-base-200: #f0f1e9;
   --color-base-300: #dcded3;
@@ -35,6 +36,7 @@
 @plugin "daisyui/theme" {
   name: "iftar-dark";
   color-scheme: dark;
+  --border: 1px;
   --color-base-100: #0f1f1b;
   --color-base-200: #0b1714;
   --color-base-300: #07110f;
