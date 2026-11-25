@@ -100,7 +100,7 @@ export default function EventForm({
         <input name="thumbnail" type="url" defaultValue={initial?.thumbnail} placeholder="https://..." className={`input ${cls("thumbnail")}`} />
       </FormField>
       <FormField label="Description" error={errors.description} className="sm:col-span-2">
-        <textarea name="description" rows={5} defaultValue={initial?.description} placeholder="What are you distributing? When should volunteers arrive? Describe the meeting point and tasks, such as packing meals or handing out water." className={`textarea ${cls("description")}`} />
+        <textarea name="description" rows={5} defaultValue={initial?.description} placeholder="Event details and volunteer tasks" className={`textarea ${cls("description")}`} />
       </FormField>
       <div className="sm:col-span-2">
         <button type="submit" disabled={busy} className="btn btn-primary w-full sm:w-auto">

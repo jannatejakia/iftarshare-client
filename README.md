@@ -14,7 +14,6 @@ A community platform where people organise, join and track Iftar, Sehri and food
 - Email/password and Google login with BetterAuth, JWT-protected API
 - Light and dark theme toggle
 - Bangladesh-time event dates and local community photographs with attribution
-- Consent-based event updates signup, with duplicate protection and request rate limits
 
 ## Tech stack
 Next.js (App Router), TypeScript, Tailwind CSS, DaisyUI, BetterAuth, Express, MongoDB
@@ -32,9 +31,7 @@ For production Google OAuth, use `https://iftarshare-client.vercel.app` as the a
 
 Server repo: https://github.com/jannatejakia/iftarshare-server
 
-## Event updates signup
-
-The newsletter form saves opt-in email addresses in `iftarshareAuthDB.newsletterSubscriptions`. It requires explicit consent, rejects cross-origin requests and applies a per-minute request limit using expiring records. Duplicate addresses are stored only once. This is a signup list; automated email delivery is not configured.
+The newsletter section is design-only, as specified in the assignment. It does not collect email addresses.
 
 ## Community photographs
 

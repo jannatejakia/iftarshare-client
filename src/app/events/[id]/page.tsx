@@ -100,7 +100,7 @@ export default function EventDetailsPage() {
               <progress className="progress progress-primary w-full" value={percent} max={100} />
             </div>
             {button}
-            <p className="text-sm leading-6 opacity-75">Joining signs you up to help the organiser. It does not reserve a meal or food pack. Check the description for your tasks and meeting point.</p>
+            <p className="text-xs opacity-70">Volunteer signup only.</p>
             {!user && !past && <p className="text-center text-xs opacity-70">You need to log in before joining.</p>}
           </aside>
         </div>

@@ -19,7 +19,7 @@ async function EventList() {
   if (events.length === 0) {
     return (
       <div className="flex flex-wrap items-center justify-between gap-4 rounded-md bg-base-200 px-5 py-5">
-        <p className="text-sm leading-6">No upcoming events are listed. Organising an iftar? Add the time, meeting point and help you need.</p>
+        <p className="text-sm leading-6">No upcoming events yet.</p>
         <Link href="/create-event" className="link shrink-0 text-sm font-semibold">Post an event</Link>
       </div>
     );
@@ -32,7 +32,7 @@ export default function RecentEvents() {
     <section className="border-b border-base-300 py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
-          <h2 className="text-2xl font-semibold">On the noticeboard</h2>
+          <h2 className="text-2xl font-semibold">Upcoming events</h2>
           <Link href="/events" className="link text-sm">All upcoming events</Link>
         </div>
         <Suspense fallback={<EventGridSkeleton />}>

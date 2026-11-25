@@ -9,8 +9,8 @@ const photos = [
 
 export default function Gallery() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:py-16">
-      <SectionHeading title="The work before iftar" text="Water ready, plates laid out, meals handed over. Two views from Chawkbazar Shahi Mosque in Dhaka, alongside Al Manahil's food distribution in 2020. Photos of independent initiatives, credited below." />
+    <section className="mx-auto max-w-7xl px-4 py-10">
+      <SectionHeading title="Gallery" text="Community iftar and food distribution in Bangladesh." />
       <div className="grid gap-x-6 gap-y-8 sm:grid-cols-3">
         {photos.map((photo) => (
           <figure key={photo.file}>
