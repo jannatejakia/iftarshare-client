@@ -70,7 +70,7 @@ export default function ManageEventsPage() {
         <div className="overflow-x-auto rounded-box border border-base-300 bg-base-100">
           <table className="table">
             <thead>
-              <tr><th>Event</th><th>Type</th><th>Date</th><th>Capacity</th><th className="text-right">Actions</th></tr>
+              <tr><th>Event</th><th>Type</th><th>Date (BD time)</th><th>Volunteers needed</th><th className="text-right">Actions</th></tr>
             </thead>
             <tbody>
               {events.map((e) => (

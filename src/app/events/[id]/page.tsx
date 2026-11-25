@@ -19,14 +19,14 @@ export default function EventDetailsPage() {
 
   async function handleJoin() {
     if (!user) {
-      toast.info("Please log in to join this event.");
+      toast.info("Please log in to join as a volunteer.");
       router.push(`/login?redirect=/events/${id}`);
       return;
     }
     setJoining(true);
     try {
       const res = await apiFetch<{ message: string }>(`/events/${id}/join`, { method: "POST" }, true);
-      toast.success(res.message);
+      toast.success(res.message + " You are signed up as a volunteer.");
       setJoined(true);
       setEvent((prev) => (prev ? { ...prev, joinedCount: (prev.joinedCount ?? 0) + 1 } : prev));
     } catch (e) {
@@ -61,10 +61,10 @@ export default function EventDetailsPage() {
 
   let button = (
     <button onClick={handleJoin} disabled={joining} className="btn btn-primary btn-lg w-full">
-      {joining && <span className="loading loading-spinner" />} Join Event
+      {joining && <span className="loading loading-spinner" />} Join as a volunteer
     </button>
   );
-  if (joined) button = <button disabled className="btn btn-success btn-lg w-full">You have joined this event</button>;
+  if (joined) button = <button disabled className="btn btn-success w-full">You are signed up to volunteer</button>;
   else if (past) button = <button disabled className="btn btn-lg w-full">This event has ended</button>;
   else if (full) button = <button disabled className="btn btn-lg w-full">Event is full</button>;
   else if (isOwner) button = <button disabled className="btn btn-lg w-full">You are the organiser</button>;
@@ -85,20 +85,22 @@ export default function EventDetailsPage() {
           <aside className="space-y-5 rounded-box bg-base-200/70 p-6">
             <div>
               <p className="text-sm font-semibold opacity-70">When</p>
-              <p>🗓️ {formatDate(event.eventDate)}</p>
+              <p>{formatDate(event.eventDate)}</p>
+              <p className="mt-1 text-xs opacity-65">Bangladesh time (UTC+6)</p>
             </div>
             <div>
               <p className="text-sm font-semibold opacity-70">Where</p>
-              <p>📍 {event.location}</p>
+              <p>{event.location}</p>
             </div>
             <div>
               <p className="mb-1 flex justify-between text-sm font-semibold opacity-70">
-                <span>Spots taken</span>
+                <span>Volunteers joined</span>
                 <span>{joinedCount} / {event.capacity}</span>
               </p>
               <progress className="progress progress-primary w-full" value={percent} max={100} />
             </div>
             {button}
+            <p className="text-sm leading-6 opacity-75">Joining signs you up to help the organiser. It does not reserve a meal or food pack. Check the description for your tasks and meeting point.</p>
             {!user && !past && <p className="text-center text-xs opacity-70">You need to log in before joining.</p>}
           </aside>
         </div>

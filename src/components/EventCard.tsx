@@ -3,18 +3,19 @@ import { EventItem, formatDate } from "@/lib/api";
 
 export default function EventCard({ event }: { event: EventItem }) {
   return (
-    <article className="card h-full overflow-hidden border border-base-300 bg-base-100 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+    <article className="card h-full overflow-hidden border border-base-300 bg-base-100">
       <figure className="relative h-48 w-full shrink-0 bg-base-200">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={event.thumbnail} alt={event.title} className="h-full w-full object-cover" loading="lazy" />
-        <span className="badge badge-secondary absolute left-3 top-3 font-medium">{event.eventType}</span>
+        <span className="absolute left-3 top-3 rounded bg-base-100/95 px-2 py-1 text-xs font-medium">{event.eventType}</span>
       </figure>
       <div className="card-body flex-1 gap-2 p-5">
         <h3 className="card-title line-clamp-1 text-lg">{event.title}</h3>
         <p className="line-clamp-2 text-sm opacity-75">{event.description}</p>
         <ul className="mt-1 space-y-1 text-sm">
-          <li className="flex items-start gap-2"><span aria-hidden>📍</span><span className="line-clamp-1">{event.location}</span></li>
-          <li className="flex items-start gap-2"><span aria-hidden>🗓️</span><span>{formatDate(event.eventDate)}</span></li>
+          <li className="line-clamp-1"><span className="font-medium">Where: </span>{event.location}</li>
+          <li><span className="font-medium">When: </span>{formatDate(event.eventDate)} <span className="opacity-60">(BD time)</span></li>
+          {event.creatorName && <li className="line-clamp-1"><span className="font-medium">Organiser: </span>{event.creatorName}</li>}
         </ul>
         <div className="card-actions mt-auto pt-3">
           <Link href={`/events/${event._id}`} className="btn btn-primary btn-sm w-full">View Event</Link>

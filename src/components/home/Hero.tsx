@@ -1,42 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
-
-const stats = [
-  ["5", "Event types"],
-  ["1-click", "Joining"],
-  ["100%", "Community run"],
-];
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-neutral text-neutral-content">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1600&auto=format&fit=crop&q=70"
-        alt=""
-        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-35"
-      />
-      <div className="mx-auto max-w-7xl px-4 py-24 sm:py-32">
-        <span className="badge badge-secondary mb-5 px-4 py-3 font-medium">Ramadan Mubarak 🌙</span>
-        <h1 className="max-w-3xl text-4xl font-extrabold leading-tight sm:text-6xl">
-          Share an Iftar. <span className="text-secondary">Feed a neighbour.</span>
-        </h1>
-        <p className="mt-5 max-w-xl text-lg opacity-90">
-          IftarShare connects neighbours who want to distribute meals with people who need them. Create a drive, join one nearby, and make this Ramadan count.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/events" className="btn btn-secondary btn-lg">Find an event</Link>
-          <Link href="/create-event" className="btn btn-outline btn-lg border-neutral-content text-neutral-content hover:bg-neutral-content hover:text-neutral">
-            Host a distribution
-          </Link>
+    <section className="border-b border-base-300">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p lang="bn" className="mb-5 text-sm font-medium text-primary">পাড়ার উদ্যোগ, একসাথে</p>
+          <h1 lang="bn" className="max-w-xl text-4xl font-semibold leading-[1.5] tracking-tight text-primary sm:text-5xl">আপনার এলাকার ইফতার আয়োজনে পাশে থাকুন।</h1>
+          <p lang="bn" className="mt-5 max-w-lg text-lg leading-8 opacity-80">খাবার প্যাকেট করা, পানি পৌঁছে দেওয়া কিংবা বিতরণে হাত লাগানো—আপনার একটু সময়ও কাজে আসতে পারে। কাছের আয়োজন খুঁজুন, স্বেচ্ছাসেবক হিসেবে যোগ দিন।</p>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link href="/events" className="btn btn-primary">Find an event</Link>
+            <Link href="/create-event" className="link link-primary text-sm font-medium underline-offset-4">Organise an event →</Link>
+          </div>
+          <p className="mt-6 text-sm opacity-65">Iftar, sehri and food distribution in your neighbourhood.</p>
         </div>
-        <dl className="mt-12 grid max-w-xl grid-cols-3 gap-6 text-center sm:text-left">
-          {stats.map(([value, label]) => (
-            <div key={label}>
-              <dt className="text-2xl font-bold text-secondary">{value}</dt>
-              <dd className="text-sm opacity-80">{label}</dd>
-            </div>
-          ))}
-        </dl>
+        <figure>
+          <Image src="/images/chawkbazar-iftar.jpg" alt="Plates of fruit and iftar prepared for a shared meal at Chawkbazar Shahi Mosque, Dhaka" width={1280} height={853} priority sizes="(max-width: 1024px) 100vw, 50vw" className="aspect-[4/3] w-full rounded-lg object-cover" />
+          <figcaption className="mt-3 text-xs leading-5 opacity-65">Chawkbazar Shahi Mosque, Dhaka. Photo: <a href="https://commons.wikimedia.org/wiki/File:Iftar_at_Chawkbajar_Shahi_Mosque_12.jpg" className="underline underline-offset-2">Wasiul Bahar</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline underline-offset-2">CC BY-SA 4.0</a></figcaption>
+        </figure>
       </div>
     </section>
   );

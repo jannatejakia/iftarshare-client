@@ -21,7 +21,7 @@ async function EventList() {
     return (
       <EmptyState
         title="No upcoming events yet."
-        text="Be the first to host a distribution drive in your area."
+        text="Planning an iftar or food distribution? Add the details so volunteers nearby can find it."
         action={{ href: "/create-event", label: "Create an event" }}
         className="bg-base-100"
       />
@@ -32,9 +32,9 @@ async function EventList() {
 
 export default function RecentEvents() {
   return (
-    <section className="bg-base-200/60 py-20">
+    <section className="border-y border-base-300 bg-base-200/40 py-14 sm:py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading title="Upcoming Distribution Drives" text="The next events happening around the community. Pick one and join in." />
+        <SectionHeading title="Upcoming events" text="Find an area you can get to, read what help is needed, and join as a volunteer. Times are shown in Bangladesh time." />
         <Suspense fallback={<EventGridSkeleton />}>
           <EventList />
         </Suspense>

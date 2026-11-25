@@ -1,31 +1,26 @@
+import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 
-const photoIds = [
-  "photo-1593113598332-cd288d649433",
-  "photo-1488521787991-ed7bbaae773c",
-  "photo-1469571486292-0ba58a3f068b",
-  "photo-1559027615-cd4628902d4a",
-  "photo-1593113630400-ea4288922497",
-  "photo-1542810634-71277d95dcbb",
-  "photo-1509099836639-18ba1795216d",
-  "photo-1532629345422-7515f3d16bb6",
+const photos = [
+  { file: "chawkbazar-iftar.jpg", caption: "Iftar plates ready to serve", alt: "Rows of iftar plates with fruit at Chawkbazar Shahi Mosque, Dhaka", author: "Wasiul Bahar", source: "Iftar_at_Chawkbajar_Shahi_Mosque_12.jpg", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  { file: "community-iftar.jpg", caption: "Setting out water before iftar", alt: "Two men arranging water bottles and iftar plates inside Chawkbazar Shahi Mosque", author: "Wasiul Bahar", source: "Iftar_at_Chawkbajar_Shahi_Mosque_25.jpg", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  { file: "iftar-preparation.jpg", caption: "A simple iftar at Chawkbazar", alt: "A plate of fruit, jilapi and a bottle of water on a mat at Chawkbazar Shahi Mosque", author: "Wasiul Bahar", source: "Iftar_at_Chawkbajar_Shahi_Mosque_29.jpg", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  { file: "food-distribution.jpg", caption: "Al Manahil food distribution, 2020", alt: "Al Manahil volunteers handing a food package to a family in Bangladesh", author: "Al Manahil Welfare Foundation Bangladesh", source: "Al_Manahil_food_distribution_28_October_2020.jpg", license: "CC BY 3.0", licenseUrl: "https://creativecommons.org/licenses/by/3.0/" },
 ];
 
 export default function Gallery() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-20">
-      <SectionHeading title="Moments of Giving" text="A glimpse of what community kindness looks like on the ground." />
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {photoIds.map((id, i) => (
-          <div key={id} className="aspect-square overflow-hidden rounded-box bg-base-200">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`https://images.unsplash.com/${id}?w=600&h=600&auto=format&fit=crop&q=70`}
-              alt={`Community food distribution moment ${i + 1}`}
-              loading="lazy"
-              className="h-full w-full object-cover transition duration-500 hover:scale-110"
-            />
-          </div>
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:py-16">
+      <SectionHeading title="Community moments in Bangladesh" text="Shared meals and food distribution, documented by the people who were there. These photographs show independent community initiatives." />
+      <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+        {photos.map((photo) => (
+          <figure key={photo.file}>
+            <Image src={`/images/${photo.file}`} alt={photo.alt} width={1280} height={853} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="aspect-[4/3] w-full rounded-md object-cover" />
+            <figcaption className="mt-3 text-sm leading-6">
+              <p className="font-medium">{photo.caption}</p>
+              <p className="mt-1 text-xs opacity-65"><a href={`https://commons.wikimedia.org/wiki/File:${photo.source}`} className="underline underline-offset-2">{photo.author}</a> · <a href={photo.licenseUrl} className="underline underline-offset-2">{photo.license}</a></p>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </section>

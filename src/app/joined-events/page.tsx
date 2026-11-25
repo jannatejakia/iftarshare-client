@@ -19,7 +19,7 @@ export default function JoinedEventsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12">
       <h1 className="text-3xl font-extrabold text-primary sm:text-4xl">Joined Events</h1>
-      <p className="mb-8 mt-2 opacity-75">Events you have signed up for, soonest first.</p>
+      <p className="mb-8 mt-2 opacity-75">Your volunteer commitments, soonest first. Check each event for the meeting point and arrival time.</p>
 
       {joined === null ? (
         <EventGridSkeleton count={3} />
